@@ -1,4 +1,23 @@
-// Your Script here.
+function rot13(encodedStr) {
+  let decodedArr = [];
+  
+  for (let i = 0; i < encodedStr.length; i++) {
+    let char = encodedStr[i];
+    let decodedChar = char;
+    
+    if (lookup.hasOwnProperty(char)) {
+      decodedChar = lookup[char];
+    }
+    
+    decodedArr.push(decodedChar);
+  }
+
+  return decodedArr.join('');
+}
+
+// Test the rot13 function
+console.log(rot13("SERR YBIR? NPPVBWBO")); // This should output "FREE LOVE? CAESARIAN"
+
 
 const lookup = {
   A: "N",
